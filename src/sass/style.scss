@@ -1,0 +1,153 @@
+@use './colors' as *;
+@use './mixins' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.6rem;
+	background-color: $color-black-lighter;
+	color: $color-white;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-heading {
+	position: relative;
+	margin-bottom: 3rem;
+	font-size: 3.6rem;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.section-padding {
+	padding: 4rem 2rem;
+}
+
+.no-scroll-mobile {
+	overflow: hidden;
+}
+
+// HEADER & NAV
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1600px;
+	padding: 20px 12px;
+	z-index: 500;
+
+	.hamburger {
+		z-index: 500;
+	}
+
+	&__logo {
+		font-size: 3rem;
+		padding: 1.2rem;
+
+		&-a {
+			text-decoration: none;
+			color: inherit;
+		}
+	}
+
+	&__links {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: $color-white;
+		transform: translateX(102%);
+		transition: transform 0.6s, opacity 0.6s;
+		opacity: 0;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0);
+			position: fixed;
+			opacity: 1;
+		}
+	}
+
+	&__link {
+		position: relative;
+		text-decoration: none;
+		color: $color-black;
+		font-size: 3rem;
+		padding: 20px;
+	}
+}
+
+.header {
+	background-image: url(../../dist/img/header_1920.jpg);
+	position: relative;
+	height: 100svh;
+	background-position: 70% center;
+	background-size: cover;
+	z-index: 0;
+
+	&__shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(31, 31, 31, 0.5);
+		z-index: -1;
+	}
+
+	&__texts {
+		z-index: 1;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		text-align: center;
+		&-h1 {
+			letter-spacing: 10px;
+			font-weight: 400;
+			text-transform: uppercase;
+			font-size: 4rem;
+		}
+		&-p {
+			letter-spacing: 2px;
+			font-weight: 300;
+			font-size: 2rem;
+			padding: 15px;
+		}
+	}
+}
+
+//MEDIA QUERIES
+@import './small';
+@import './medium';
+@import './large';
