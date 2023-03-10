@@ -11,7 +11,9 @@
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Roboto:wght@100;300;500;700;900&display=swap"
+        rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/hamburger.min.css">
     <link rel="stylesheet" href="dist/css/style.min.css">
@@ -21,13 +23,13 @@
 <body>
 
     <nav class="nav">
-        <div class="nav__logo"><a class="nav__logo-a" href="#">JAC&MATT'S</a></div>
+        <div class="nav__logo"><a class="nav__logo-a" href="#">JAC<span>&</span>MATT'S</a></div>
         <button class="hamburger hamburger--spin" type="button">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
         </button>
-        
+
         <div class="nav__links">
             <a class="nav__link" href="#onas">o nas</a>
             <a class="nav__link" href="#usluga">usługa</a>
@@ -35,35 +37,33 @@
             <a class="nav__link" href="#kontakt">kontakt</a>
         </div>
     </nav>
-    
-    <header class="header">  
+
+    <header class="header">
         <div class="header__shadow"></div>
         <div class="header__texts">
             <h1 class="header__texts-h1">whisky bar</h1>
             <p class="header__texts-p">Zadbamy, aby Twoje wydarzenie było wyjątkowe</p>
         </div>
+        <a href="#onas">
+            <img class="header__arrow" src="./dist/img/icons/chevron-down.svg" alt="">
+        </a>
     </header>
 
     <main>
-        <section id="aboutus" class="aboutus section-padding">
-            <div class="wrapper">
-                <h2 class="section-heading">o nas</h2>
+        <section id="onas" class="aboutus section-padding">
+            <div class="wrapper aboutus-wrapper">
+                <h2 class="section-heading">O nas</h2>
                 <div class="aboutus__box">
-                    <div class="aboutus__box-img">
-                        <img src="./dist/img/waters_640.jpg" alt="Zielony krajobraz nad wodą" class="aboutus__img">
-                    </div>
-                    <div class="aboutus__box-text">
-                        <h3 class="aboutus__title">Niezapomniane przygody</h3>
-                        <p class="aboutus__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum. <a class="aboutus__text-a" href="https://mmcschool.pl/">www.MMCSchool.pl</a></p>
-                    </div>
+                    <p class="aboutus__long">Przyjacielski projekt łączący w sobie prosty styl i dobre alkohole. Mamy
+                        dla Was whisky oraz gin podawane w scenerii palonego drewna i surowego metalu. Motywem
+                        przewodnim naszego baru jest whisky i gin, ale chętnie zaserwujemy Twój ulubiony alkohol w nowej
+                        odsłonie lub w klasycznym stylu.</p>
+                    <p class="aboutus__short">Wspólnie dopasujemy drinki do Twoich potrzeb - bo to Wasze zadowolenie
+                        jest dla nas najważniejsze.</p>
                 </div>
             </div>
+            <img class="aboutus__bg-icon-one" src="./dist/img/icons/glass-full.svg" alt="">
+            <img class="aboutus__bg-icon-two" src="./img/icons/square.svg" alt="">
     </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

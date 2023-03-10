@@ -1,1 +1,27 @@
 @use './colors' as *;
+
+// MEDIA QUERIES
+
+@mixin mobile {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktopMin {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin desktopMax {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
