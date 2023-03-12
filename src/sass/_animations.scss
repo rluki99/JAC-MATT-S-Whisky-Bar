@@ -1,13 +1,25 @@
 
 
-@keyframes swing-right {
+@keyframes swing-one {
 	0% {
 		rotate: -15deg;
 	}
 	50% {
-		rotate: 30deg;
+		rotate: 20deg;
 	}
     100% {
         rotate: -15deg;
+    }
+}
+
+@keyframes swing-two {
+	0% {
+		rotate: 10deg;
+	}
+	50% {
+		rotate: -30deg;
+	}
+    100% {
+        rotate: 10deg;
     }
 }
