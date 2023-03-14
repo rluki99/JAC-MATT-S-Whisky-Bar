@@ -257,7 +257,7 @@ body {
 	&-wrapper {
 		background-color: $color-black-trans;
 		padding: 24px;
-		max-width: 600px;
+		max-width: 700px;
 
 		@include mobile {
 			padding: 24px 48px 36px;
@@ -286,7 +286,8 @@ body {
 		margin-bottom: 24px;
 	}
 
-	&__bg-icon-one, &__bg-icon-two {
+	&__bg-icon-one,
+	&__bg-icon-two {
 		display: none;
 		position: absolute;
 		z-index: -5;
@@ -396,7 +397,7 @@ body {
 		}
 
 		@include desktopMin {
-			width: 60%;
+			width: 55%;
 		}
 	}
 
@@ -412,21 +413,27 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 		padding: 12px 24px 24px;
 
 		@include mobile {
-			padding: 24px 48px 36px;
-			font-size: 1.8rem;
+			padding: 24px 36px 36px;
+			font-size: 1.7rem;
 		}
 
 		@include tablet {
 			width: 50%;
-			padding: 36px 48px;
+			padding: 12px 24px;
 		}
 
 		@include desktopMin {
-			width: 40%;
-			font-size: 2.2rem;
+			width: 45%;
+			font-size: 1.85rem;
+		}
+
+		@include desktopMax {
+			padding: 24px 36px;
+			font-size: 1.95rem;
 		}
 
 		h3 {
@@ -457,6 +464,112 @@ body {
 			text-align: center;
 			letter-spacing: 2px;
 			font-weight: 300;
+		}
+	}
+}
+
+.offer__more {
+	background-image: url(../../dist/img/bar_img_1920.jpg);
+	background-position: 50% 50%;
+	background-size: cover;
+	position: relative;
+	height: 500px;
+	z-index: 0;
+
+	&-wrapper {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		@include desktopMin {
+			padding: 80px 0;
+			flex-direction: row;
+		}
+	}
+
+	&-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(31, 31, 31, 0.65);
+		z-index: -1;
+	}
+
+	&-box {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 0 24px;
+		color: $color-grey-lighter;
+
+		@include desktopMin {
+			justify-content: flex-start;
+		}
+
+		h3 {
+			font-family: 'Caveat', cursive;
+			font-size: 3rem;
+			font-weight: 700;
+			position: relative;
+
+			@include mobile {
+				font-size: 3.5rem;
+			}
+
+			@include tablet {
+				font-size: 3.6rem;
+			}
+
+			@include desktopMin {
+				font-size: 4rem;
+			}
+
+			@include desktopMax {
+				font-size: 4.5rem;
+			}
+		}
+
+		h3::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 75%;
+			height: 2px;
+			background-color: $color-hover;
+
+			@include desktopMax {
+				height: 3px;
+			}
+		}
+
+		p {
+			font-weight: 400;
+			padding: 1rem;
+			border-radius: 10px;
+
+			@include mobile {
+				font-size: 1.8rem;
+			}
+
+			@include tablet {
+				font-size: 2rem;
+			}
+
+			@include desktopMin {
+				padding: 2rem;
+				font-size: 2.2rem;
+			}
+
+			@include desktopMax {
+				padding: 3rem;
+			}
 		}
 	}
 }
