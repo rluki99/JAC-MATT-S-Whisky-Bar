@@ -13,15 +13,6 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	scroll-padding-top: var(--scroll-padding);
-}
-
-.scroll-up {
-	scroll-padding-top: 120px;
-}
-
-.scroll-down {
-	scroll-padding-top: 0;
 }
 
 body {
