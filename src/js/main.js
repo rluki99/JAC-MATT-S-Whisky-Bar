@@ -4,6 +4,7 @@ const body = document.querySelector('body')
 const mobileLinks = document.querySelectorAll('.nav__link')
 const footerYear = document.querySelector('.year')
 const navWrapper = document.querySelector('.wrapper-nav')
+const html = document.documentElement
 let lastScrollY = window.scrollY
 let lastWidthX = window.innerWidth
 
@@ -31,7 +32,6 @@ currentYear()
 
 //nav background and collapse expand menu depending on scroll
 window.addEventListener('scroll', () => {
-
 	//add black background to the nav after scroll
 	if (window.scrollY > 0) {
 		navWrapper.classList.add('wrapper-nav--black')
@@ -45,22 +45,23 @@ window.addEventListener('scroll', () => {
 		navWrapper.classList.remove('wrapper-nav--hidden')
 	} else if (lastScrollY < window.scrollY) {
 		navWrapper.classList.add('wrapper-nav--hidden')
+		html.style.setProperty('--scroll-padding',0)
 	} else {
 		navWrapper.classList.remove('wrapper-nav--hidden')
+		html.style.setProperty('--scroll-padding', navWrapper.offsetHeight + 'px')
 	}
 
 	lastScrollY = window.scrollY
 })
 
 //navigation height for scroll-padding
-document.documentElement.style.setProperty('--scroll-padding', navWrapper.offsetHeight + "px")
+// document.documentElement.style.setProperty('--scroll-padding', navWrapper.offsetHeight + 'px')
 
 //remove open mobile nav after dekstop breakpoint
 window.addEventListener('resize', () => {
 	lastWidthX = window.innerWidth
 
 	if (lastWidthX >= 992) {
-		// console.log(`${lastWidthX} Większe niż 992`)
 		navBtn.classList.remove('is-active')
 		menu.classList.remove('nav__links--active')
 		body.classList.remove('no-scroll-mobile')
