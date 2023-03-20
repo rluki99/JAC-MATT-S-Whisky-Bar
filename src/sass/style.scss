@@ -234,7 +234,6 @@ body {
 		text-transform: uppercase;
 
 		@include desktopMin {
-			position: static;
 			font-size: 1.6rem;
 			text-decoration: none;
 			color: inherit;
@@ -244,6 +243,29 @@ body {
 			font-size: 2rem;
 		}
 	}
+
+	&__link::before,
+	&__link::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		bottom: 15%;
+		border-bottom: 2px solid $color-hover;
+		transition: width 0.5s;
+	}
+
+	&__link::before {
+		right: 50%;
+	}
+
+	&__link::after {
+		left: 50%;
+	}
+
+	&__link:hover::before,
+	&__link:hover::after {
+		width: 50%;
+	}
 }
 
 // HEADER
@@ -251,12 +273,14 @@ body {
 .header {
 	background-image: url(../../dist/img/header_1080.jpg);
 	position: relative;
+	height: 100vh;
 	height: 100svh;
 	background-position: 70% center;
 	background-size: cover;
 	z-index: 0;
 
 	@include tablet {
+		height: 92vh;
 		height: 92svh;
 	}
 
@@ -910,9 +934,20 @@ body {
 			}
 		}
 
+		.form-input-date {
+			text-align: end;
+		}
+
+		.form-input-date:focus,
+		.form-input-date:valid {
+			text-align: left;
+		}
+
 		.form-textarea {
 			min-width: 100%;
 			max-width: 100%;
+			min-height: 130px;
+			max-height: 180px;
 		}
 
 		.form-input:focus ~ .form-label,
