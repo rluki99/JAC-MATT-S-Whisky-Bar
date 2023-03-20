@@ -340,14 +340,20 @@ body {
 		}
 	}
 
-	&__arrow {
+	&__arrow-box {
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
 		bottom: 70px;
 		width: 40px;
-		color: $color-grey-lighter;
-		transition: color 0.3s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__arrow {
+		animation: bounce-top 10s infinite both;
+		width: 40px;
 	}
 }
 
