@@ -181,7 +181,7 @@ body {
 
 		span {
 			font-weight: 300;
-			color: $color-hover;
+			// color: $color-hover;
 		}
 
 		&-a {
@@ -707,7 +707,7 @@ body {
 	&-wrapper {
 		background-color: $color-brown-trans;
 		padding: 24px 18px;
-		max-width: 750px;
+		max-width: 790px;
 		margin-bottom: 2rem;
 
 		@include mobile {
@@ -879,7 +879,7 @@ body {
 		color: $color-black-lighter;
 		border: 2px solid $color-white;
 		padding: 0.5rem 1rem;
-		margin-top: 1rem;
+		margin: 1rem 1rem 0;
 		display: inline-block;
 		font-weight: 700;
 		transition: background-color 0.5s, color 0.5s;
@@ -888,7 +888,7 @@ body {
 		box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 
 		@include mobile {
-			margin-top: 2rem;
+			margin: 2rem 1.5rem 0;
 			font-size: 1.8rem;
 		}
 	}
