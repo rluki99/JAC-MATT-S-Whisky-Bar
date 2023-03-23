@@ -177,39 +177,41 @@
                 <a class="contact__tel" data-aos="zoom-in" data-aos-duration="1500" href="tel:+48785948351">785 948 351</a>
                 <a class="contact__tel" data-aos="zoom-in" data-aos-duration="1500" href="tel:+48519670368">519 670 368</a>
                 <div class="contact__box">
-                    <form class="contact__form">
+                    <form class="contact__form" method="post" action="./wyslij_email.php">
                         <div class="contact__form-box">
-                            <input class="form-input" type="text" id="name" required>
-                            <label class="form-label" for="name">Imię*</label>
+                          <input class="form-input" type="text" id="name" name="imie" required>
+                          <label class="form-label" for="name">Imię*</label>
                         </div>
                         <div class="contact__form-box">
-                            <input class="form-input" type="email" id="mail" required>
-                            <label class="form-label" for="mail">E-mail*</label>
+                          <input class="form-input" type="email" id="mail" name="mail" required>
+                          <label class="form-label" for="mail">E-mail*</label>
                         </div>
                         <div class="contact__form-box">
-                            <input class="form-input" type="tel" id="phone" required>
-                            <label class="form-label" for="phone">Telefon</label>
+                          <input class="form-input" type="tel" id="phone" name="telefon">
+                          <label class="form-label" for="phone">Telefon</label>
                         </div>
                         <div class="contact__form-box">
-                            <input class="form-input form-input-date" type="date" id="data" required>
-                            <label class="form-label" for="data">Termin imprezy*</label>
+                          <input class="form-input form-input-date" type="date" id="data" name="data" required>
+                          <label class="form-label" for="data">Termin imprezy*</label>
                         </div>
                         <div class="contact__form-box">
-                            <input class="form-input" type="text" id="place" required>
-                            <label class="form-label" for="place">Miejsce imprezy (lokal)*</label>
+                          <input class="form-input" type="text" id="place" name="miejsce" required>
+                          <label class="form-label" for="place">Miejsce imprezy (lokal)*</label>
                         </div>
                         <div class="contact__form-box">
-                            <textarea class="form-input form-textarea" id="msg" cols="30" rows="7" required></textarea>
-                            <label class="form-label" for="msg">Informacje o przyjęciu*</label>
+                          <textarea class="form-input form-textarea" id="msg" name="dodatkowe" cols="30" rows="7" required></textarea>
+                          <label class="form-label" for="msg">Informacje o przyjęciu*</label>
                         </div>
-                        <button type="submit" class="contact__form-btn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Wyślij
+                        <input type="text" name="honeypot" id="honeypot" style="display:none;">
+                        <button type="submit" name="submit" class="contact__form-btn">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          Wyślij
                         </button>
-                    </form>
+                      </form>
+                      
                 </div>
             </div>
             <div class="shape-block shape-block-up shape-block-up--black"></div>
