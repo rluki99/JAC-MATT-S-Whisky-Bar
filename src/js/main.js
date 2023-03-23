@@ -57,6 +57,7 @@ const checkMail = () => {
 const checkPhone = () => {
 	if (phone.value === '') {
 		phone.classList.remove('form-input--error')
+		return
 	}
 
 	const re = /^\+?[0-9]{9,11}$/
