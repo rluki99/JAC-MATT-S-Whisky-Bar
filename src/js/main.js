@@ -70,10 +70,20 @@ const checkPhone = () => {
 }
 
 const checkDate = () => {
-	if (eventData.value) {
-		eventData.classList.remove('form-input--error')
-	} else {
+	const today = new Date()
+	const maxDate = new Date('2100-12-31')
+
+	if (!eventData.value) {
 		eventData.classList.add('form-input--error')
+		return
+	}
+
+	const selectedDate = new Date(eventData.value)
+
+	if (selectedDate < today || selectedDate > maxDate) {
+		eventData.classList.add('form-input--error')
+	} else {
+		eventData.classList.remove('form-input--error')
 	}
 }
 
@@ -101,7 +111,7 @@ const checkHoneypot = () => {
 	return true
 }
 
-const resetForn = () => {
+const resetForm = () => {
 	names.value = ''
 	mail.value = ''
 	phone.value = ''
@@ -189,10 +199,10 @@ sendBtn.addEventListener('click', (e) => {
 	const isDateValid = !eventData.classList.contains('form-input--error')
 	const isPlaceValid = !eventPlace.classList.contains('form-input--error')
 	const isMsgValid = !msg.classList.contains('form-input--error')
-	const isHoneypotEmpty = checkHoneypot();
+	const isHoneypotEmpty = checkHoneypot()
 
-	if (isNameValid && isMailValid && isPhoneValid && isDateValid && isPlaceValid && isMsgValid && isHoneypotEmpty){
+	if (isNameValid && isMailValid && isPhoneValid && isDateValid && isPlaceValid && isMsgValid && isHoneypotEmpty) {
 		HTMLFormElement.prototype.submit.call(form)
-		resetForn()
+		resetForm()
 	}
 })
