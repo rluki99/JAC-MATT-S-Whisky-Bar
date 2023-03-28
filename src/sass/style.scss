@@ -131,14 +131,17 @@ body {
 	width: 100%;
 	position: fixed;
 	z-index: 500;
-	transition: background-color 0.5s, transform 0.4s;
+	opacity: 1;
+	transition: visibility 0.4s, opacity 0.4s;
+	visibility: visible;
 
 	&--black {
 		background-color: $color-nav-footer;
 	}
 
 	&--hidden {
-		transform: translateY(-150px);
+		visibility: hidden;
+		opacity: 0;
 	}
 }
 
@@ -218,7 +221,6 @@ body {
 
 		&--active {
 			left: 0;
-			position: fixed;
 			opacity: 1;
 		}
 	}

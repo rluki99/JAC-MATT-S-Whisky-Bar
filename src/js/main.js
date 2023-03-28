@@ -129,19 +129,8 @@ const currentYear = () => {
 navBtn.addEventListener('click', hamburgerActive)
 currentYear()
 
-//debounce function delay the execution of the provided function until no new calls are received
-function debounce(func, wait = 50) {
-	let timeout;
-	return function(...args) {
-	  clearTimeout(timeout);
-	  timeout = setTimeout(() => {
-		func.apply(this, args);
-	  }, wait);
-	};
-  }
-
 //nav background and collapse expand menu depending on scroll
-window.addEventListener('scroll', debounce(() => {
+window.addEventListener('scroll', () => {
 	//add black background to the nav after scroll
 	if (window.scrollY > 0) {
 		navWrapper.classList.add('wrapper-nav--black')
@@ -151,7 +140,7 @@ window.addEventListener('scroll', debounce(() => {
 
 	//collapse expand menu depending on scroll
 	//first if is for iphone safari issue
-	if (lastScrollY < 0) {
+	if (lastScrollY <= 0 || window.scrollY == 0) {
 		navWrapper.classList.remove('wrapper-nav--hidden')
 	} else if (lastScrollY < window.scrollY) {
 		navWrapper.classList.add('wrapper-nav--hidden')
@@ -160,7 +149,7 @@ window.addEventListener('scroll', debounce(() => {
 	}
 
 	lastScrollY = window.scrollY
-}, 50))
+})
 
 //direction-dependent scroll-padding on navigation
 navLinks.forEach((link) => {
