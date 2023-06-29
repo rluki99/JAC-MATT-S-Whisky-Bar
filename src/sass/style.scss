@@ -291,7 +291,7 @@ body {
 
 	&__shadow {
 		@include shadow;
-		background-color: rgba(31, 31, 31, 0.37);
+		background-color: rgba(31, 31, 31, 0.44);
 	}
 
 	&__texts {
@@ -644,6 +644,7 @@ body {
 
 		@include desktopMin {
 			justify-content: flex-start;
+			padding-top: 36px;
 		}
 
 		h3 {
@@ -688,6 +689,7 @@ body {
 			font-weight: 400;
 			padding: 1rem;
 			border-radius: 10px;
+			font-size: 1.7rem;
 
 			@include mobile {
 				font-size: 1.8rem;
